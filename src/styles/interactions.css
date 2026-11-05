@@ -1,0 +1,62 @@
+.map__tooltip { position:absolute; z-index:2; left:16px; bottom:16px; display:flex; width:240px; gap:10px; padding:10px; border-radius:10px; background:#fff; box-shadow:0 8px 24px rgb(0 0 0 / 20%); color:var(--color-text); }
+.map__tooltip img { width:72px; height:54px; border-radius:6px; object-fit:cover; }
+.map__tooltip span { display:grid; gap:5px; font-size:13px; line-height:1.2; }
+.map__tooltip small { color:var(--color-muted); }
+.gallery__item { cursor:zoom-in; }
+.lightbox { position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:32px; background:rgb(0 0 0 / 82%); }
+.lightbox__image { max-width:min(100%, 1100px); max-height:80vh; object-fit:contain; }
+.lightbox__button { position:absolute; min-width:48px; min-height:48px; border-radius:50%; background:#fff; color:#222; font-size:28px; }
+.lightbox__close { top:24px; right:24px; }
+.lightbox__prev { left:24px; top:50%; }
+.lightbox__next { right:24px; top:50%; }
+.register { margin-top:28px; padding-top:24px; border-top:1px solid var(--color-line); }
+.register h2 { margin:0 0 6px; font-size:20px; }
+.register > p { margin:0 0 18px; color:var(--color-muted); font-size:14px; }
+.register a { color:var(--color-primary); font-weight:700; }
+.cities__link { border:0; outline:0; }
+.cities__link:focus-visible { outline:3px solid var(--color-primary); outline-offset:2px; }
+.user-nav__link--signout {
+  justify-content: center;
+  width: var(--tap);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.user-nav__link--signout:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.user-nav__link--signout svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Favorites desktop geometry from the Figma group specification. */
+.favorites__city-link svg { width:18px; height:24px; flex:0 0 auto; fill:var(--color-primary); }
+@media (min-width:1144px) {
+  .favorites__group { min-height:0; padding:24px 0; border-bottom:0; border-top:1px solid var(--color-line); }
+  .favorites__group:first-child { border-top:1px solid var(--color-line); }
+  .favorites .place-card--row { flex-direction:column; width:420px; height:320px; }
+  .favorites .place-card--row .place-card__image-wrapper { flex:0 0 190px; width:100%; min-height:0; }
+  .favorites .place-card--row .place-card__info { padding:14px 16px 16px; }
+  .favorites__city { padding-bottom:24px; }
+  .favorites__places { grid-template-columns:repeat(2, 420px); gap:24px 16px; max-height:none; overflow:visible; padding-bottom:0; }
+}
+
+/* Empty favorites is content on the page, not a separate white card. */
+.favorites--empty { min-height:calc(100vh - var(--header-height) - 120px); }
+.favorites__empty { max-width:none; min-height:0; padding:64px 16px; border-radius:0; background:transparent; box-shadow:none; }
+.favorites__empty .empty__image { width:160px; height:160px; }
+.favorites__empty .empty__title { width:246px; font-size:28px; line-height:34px; letter-spacing:-0.01em; }
+.favorites__empty .empty__text { width:min(420px, 100%); max-width:none; font-size:16px; line-height:24px; }
+.favorites__find { width:142px; min-height:44px; margin-top:12px; }
+
+.page:has(.page__main--not-found) { min-height:100vh; }
+.page__main--not-found { display:flex; min-height:0; flex:1; }
+.page__main--not-found .not-found { flex:1; justify-content:center; padding:24px 16px; }
+.page__main--not-found .not-found__image { width:200px; height:160px; margin:0; object-fit:contain; }
+.page__main--not-found .not-found__title { display:block; font-size:28px; line-height:34px; color:var(--color-text); }
+.page__main--not-found .not-found__code { font-size:inherit; line-height:inherit; letter-spacing:normal; color:inherit; }
